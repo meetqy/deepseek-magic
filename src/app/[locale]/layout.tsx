@@ -5,6 +5,8 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "~/i18n/routing";
 import { TRPCReactProvider } from "~/trpc/react";
+import { Navbar } from "~/components/navbar";
+import { Providers } from "~/components/providers";
 
 export default async function LocaleLayout({
   children,
@@ -26,7 +28,12 @@ export default async function LocaleLayout({
     <html lang={locale} className={`${GeistSans.variable}`}>
       <body>
         <NextIntlClientProvider messages={messages}>
-          <TRPCReactProvider>{children}</TRPCReactProvider>
+          <TRPCReactProvider>
+            <Providers>
+              <Navbar />
+              {children}
+            </Providers>
+          </TRPCReactProvider>
         </NextIntlClientProvider>
       </body>
     </html>
