@@ -15,6 +15,7 @@ import {
   Button,
 } from "@heroui/react";
 import { cn } from "@heroui/react";
+import { Logo } from "./logos";
 
 const menuItems = [
   "About",
@@ -48,8 +49,8 @@ export function Navbar(props: NavbarProps) {
       <NavbarMenuToggle className="text-default-400 md:hidden" />
 
       <NavbarBrand>
-        <div className="rounded-full bg-foreground text-background">123</div>
-        <span className="ml-2 font-medium">DeepSeek Magic</span>
+        <Logo className="h-10 w-10" />
+        <span className="ml-2 font-serif text-xl italic">DeepSeek Magic</span>
       </NavbarBrand>
       <NavbarContent
         className="hidden h-11 gap-4 rounded-full border-small border-default-200/20 bg-background/60 px-4 shadow-medium backdrop-blur-md backdrop-saturate-150 dark:bg-default-100/50 md:flex"
