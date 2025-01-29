@@ -1,12 +1,24 @@
 import "~/styles/globals.css";
 import { GeistSans } from "geist/font/sans";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "~/i18n/routing";
 import { TRPCReactProvider } from "~/trpc/react";
 import { Navbar } from "~/components/navbar";
 import { Providers } from "~/components/providers";
+
+export const generateMetadata = async () => {
+  const t = await getTranslations();
+
+  return {
+    title: {
+      default: `${t("SiteConfig.title")} | DeepSeekMagic`,
+      template: "%s | DeepSeekMagic",
+    },
+    description: t("SiteConfig.description"),
+  };
+};
 
 export default async function LocaleLayout({
   children,

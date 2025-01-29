@@ -48,11 +48,11 @@ export function Navbar(props: NavbarProps) {
       <NavbarMenuToggle className="text-default-400 md:hidden" />
 
       <NavbarBrand>
-        <div className="bg-foreground text-background rounded-full">123</div>
-        <span className="ml-2 font-medium">ACME</span>
+        <div className="rounded-full bg-foreground text-background">123</div>
+        <span className="ml-2 font-medium">DeepSeek Magic</span>
       </NavbarBrand>
       <NavbarContent
-        className="border-small border-default-200/20 bg-background/60 shadow-medium dark:bg-default-100/50 hidden h-11 gap-4 rounded-full px-4 backdrop-blur-md backdrop-saturate-150 md:flex"
+        className="hidden h-11 gap-4 rounded-full border-small border-default-200/20 bg-background/60 px-4 shadow-medium backdrop-blur-md backdrop-saturate-150 dark:bg-default-100/50 md:flex"
         justify="center"
       >
         <NavbarItem>
@@ -84,14 +84,14 @@ export function Navbar(props: NavbarProps) {
       <NavbarContent justify="end">
         <NavbarItem className="ml-2 !flex gap-2">
           <Button
-            className="bg-default-100 text-default-700 sm:text-default-500 sm:bg-transparent"
+            className="bg-default-100 text-default-700 sm:bg-transparent sm:text-default-500"
             radius="full"
             variant="light"
           >
             Login
           </Button>
           <Button
-            className="border-small border-secondary-500/20 bg-secondary-500/10 text-secondary-800 hidden sm:flex"
+            className="hidden border-small border-secondary-500/20 bg-secondary-500/10 text-secondary-800 sm:flex"
             color="secondary"
             radius="full"
             style={{
@@ -104,7 +104,7 @@ export function Navbar(props: NavbarProps) {
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu
-        className="bg-default-200/50 shadow-medium dark:bg-default-100/50 top-[calc(var(--navbar-height)_-_1px)] max-h-[70vh] pt-6 backdrop-blur-md backdrop-saturate-150"
+        className="top-[calc(var(--navbar-height)_-_1px)] max-h-[70vh] bg-default-200/50 pt-6 shadow-medium backdrop-blur-md backdrop-saturate-150 dark:bg-default-100/50"
         motionProps={{
           initial: { opacity: 0, y: -20 },
           animate: { opacity: 1, y: 0 },
@@ -117,7 +117,7 @@ export function Navbar(props: NavbarProps) {
       >
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
-            <Link className="text-default-500 w-full" href="#" size="md">
+            <Link className="w-full text-default-500" href="#" size="md">
               {item}
             </Link>
           </NavbarMenuItem>
