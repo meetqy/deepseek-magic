@@ -12,7 +12,6 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
   Link,
-  Button,
 } from "@heroui/react";
 import { cn } from "@heroui/react";
 import { Logo } from "./logos";
@@ -83,26 +82,7 @@ export function Navbar(props: NavbarProps) {
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
-        <NavbarItem className="ml-2 !flex gap-2">
-          <Button
-            className="bg-default-100 text-default-700 sm:bg-transparent sm:text-default-500"
-            radius="full"
-            variant="light"
-          >
-            Login
-          </Button>
-          <Button
-            className="hidden border-small border-secondary-500/20 bg-secondary-500/10 text-secondary-800 sm:flex"
-            color="secondary"
-            radius="full"
-            style={{
-              boxShadow: "inset 0 0 4px #bf97ff70",
-            }}
-            variant="flat"
-          >
-            Start Free Trial
-          </Button>
-        </NavbarItem>
+        <NavbarItem className="ml-2 !flex gap-2"></NavbarItem>
       </NavbarContent>
       <NavbarMenu
         className="top-[calc(var(--navbar-height)_-_1px)] max-h-[70vh] bg-default-200/50 pt-6 shadow-medium backdrop-blur-md backdrop-saturate-150 dark:bg-default-100/50"
