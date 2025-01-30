@@ -7,6 +7,7 @@ import { routing } from "~/i18n/routing";
 import { TRPCReactProvider } from "~/trpc/react";
 import { Navbar } from "~/components/navbar";
 import { Providers } from "~/components/providers";
+import { Toaster } from "react-hot-toast";
 
 export const generateMetadata = async () => {
   const t = await getTranslations();
@@ -22,11 +23,12 @@ export const generateMetadata = async () => {
 
 export default async function LocaleLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
   // Ensure that the incoming `locale` is valid
   if (!routing.locales.includes(locale as never)) {
     notFound();
@@ -44,6 +46,8 @@ export default async function LocaleLayout({
             <Providers>
               <Navbar />
               {children}
+
+              <Toaster />
             </Providers>
           </TRPCReactProvider>
         </NextIntlClientProvider>

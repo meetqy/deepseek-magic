@@ -44,6 +44,7 @@ export function Navbar(props: NavbarProps) {
       height="60px"
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
+      position="sticky"
     >
       <NavbarMenuToggle className="text-default-400 md:hidden" />
 
