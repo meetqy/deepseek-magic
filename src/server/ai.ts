@@ -40,6 +40,8 @@ export const openRouter = async ({ content }: { content: string }) => {
     const data = (await response.json()) as OpenRouterResponse;
     return data.choices[0]?.message.content.trim();
   } catch (error) {
+    console.log(JSON.stringify(error));
+
     throw new TRPCError({
       code: "INTERNAL_SERVER_ERROR",
       message: "Failed to fetch from openrouter.ai",
