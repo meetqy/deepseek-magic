@@ -8,6 +8,7 @@ import { TRPCReactProvider } from "~/trpc/react";
 import { Navbar } from "~/components/navbar";
 import { Providers } from "~/components/providers";
 import { Toaster } from "react-hot-toast";
+import { Footer } from "~/components/footer";
 
 export const generateMetadata = async () => {
   const t = await getTranslations();
@@ -46,7 +47,7 @@ export default async function LocaleLayout({
             <Providers>
               <Navbar />
               {children}
-
+              <Footer />
               <Toaster />
             </Providers>
           </TRPCReactProvider>

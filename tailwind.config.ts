@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 import { heroui } from "@heroui/react";
 import { type Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
@@ -27,5 +28,5 @@ export default {
     },
   },
   darkMode: "class",
-  plugins: [heroui()],
+  plugins: [heroui(), require("@tailwindcss/typography")],
 } satisfies Config;

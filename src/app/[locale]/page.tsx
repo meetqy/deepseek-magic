@@ -10,7 +10,7 @@ export default async function Page() {
           DeepSeek Magic
         </h1>
 
-        <p className="mt-6 max-w-xl text-lg text-foreground-400">
+        <p className="mt-6 max-w-5xl text-lg text-foreground-400">
           {t("SiteConfig.description")}
         </p>
       </div>

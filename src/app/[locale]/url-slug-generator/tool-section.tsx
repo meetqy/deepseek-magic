@@ -19,6 +19,7 @@ export const ToolSection = () => {
             placeholder="Type something like 'DeepSeek AI Blog Post!'"
             value={input}
             onValueChange={setInput}
+            max={100}
             size="lg"
             className="text-lg"
             endContent={
@@ -27,8 +28,14 @@ export const ToolSection = () => {
                 isLoading={ai.isPending}
                 color="primary"
                 onPress={() => {
+                  if (!input || input.length > 100) {
+                    return toast.error(
+                      "Please input text within 100 characters.",
+                    );
+                  }
+
                   ai.mutate(
-                    `把我输入的关键词转换为 URL slug，控制在 50 个字符以内。关键词：${input}`,
+                    `Convert the keywords I input into URL slug, control within 50 characters, output English. Return only the converted slug, containing no other text. Keyword: ${input}`,
                   );
                 }}
               >

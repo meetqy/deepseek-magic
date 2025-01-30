@@ -48,7 +48,7 @@ export function Navbar(props: NavbarProps) {
     >
       <NavbarMenuToggle className="text-default-400 md:hidden" />
 
-      <NavbarBrand>
+      <NavbarBrand as={Link} href="/">
         <Logo className="h-10 w-10" />
         <span className="ml-2 font-serif text-xl italic">DeepSeek Magic</span>
       </NavbarBrand>
