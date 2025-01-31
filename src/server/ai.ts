@@ -1,4 +1,5 @@
 import { TRPCError } from "@trpc/server";
+import { env } from "~/env";
 
 interface OpenRouterResponse {
   choices: {
@@ -15,8 +16,7 @@ export const openRouter = async ({ content }: { content: string }) => {
       {
         method: "POST",
         headers: {
-          Authorization:
-            "Bearer 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",
+          Authorization: env.API_KEY,
           "HTTP-Referer": "https://deepseekmagic.com", // Optional. Site URL for rankings on openrouter.ai.
           "X-Title": "DeepSeek Magic", // Optional. Site title for rankings on openrouter.ai.
           "Content-Type": "application/json",
