@@ -10,3 +10,7 @@ A collection of AI tools powered by DeepSeek language models, offering a series 
 ## Website
 
 - [deepseekmagic.com](https://deepseekmagic.com)
+
+## License
+
+- [AGPL 3.0](https://github.com/meetqy/deepseek-magic/blob/main/LICENSE)
