@@ -15,7 +15,7 @@ export default async function Page() {
         </p>
       </div>
 
-      <div className="container grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="container grid gap-x-8 gap-y-4 md:grid-cols-2 lg:grid-cols-3">
         <CardItem
           title={
             <>
@@ -23,6 +23,17 @@ export default async function Page() {
             </>
           }
           icon="formkit:url"
+          description="Use ai to convert text to url slugify."
+        />
+        <CardItem
+          title={
+            <>
+              Text to Emoji Converter{" "}
+              <span className="sr-only">by DeepSeek</span>
+            </>
+          }
+          icon="twemoji:grinning-face"
+          description="Use ai to convert text to emoji."
         />
       </div>
     </div>

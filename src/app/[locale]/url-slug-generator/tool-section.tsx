@@ -34,9 +34,10 @@ export const ToolSection = () => {
                     );
                   }
 
-                  ai.mutate(
-                    `Convert the keywords I input into URL slug, control within 50 characters, output English. Return only the converted slug, containing no other text. Keyword: ${input}`,
-                  );
+                  ai.mutate({
+                    prompt: `Convert the keywords I input into URL slug, control within 50 characters, output English. Return only the converted slug, containing no other text. Keyword: $content`,
+                    content: input,
+                  });
                 }}
               >
                 Generator

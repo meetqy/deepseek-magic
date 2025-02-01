@@ -5,8 +5,15 @@ import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 
 export const aiRouter = createTRPCRouter({
   generator: publicProcedure
-    .input(z.string().max(500))
+    .input(
+      z.object({
+        prompt: z.string(),
+        content: z.string(),
+      }),
+    )
     .mutation(async ({ input, ctx }) => {
+      const text = input.prompt.replace("$content", input.content);
+
       const origin = ctx.headers.get("origin") ?? "";
       // 校验来源是否是 deepseekmagic.com 或者 localhost:3000
       if (
@@ -16,7 +23,7 @@ export const aiRouter = createTRPCRouter({
         throw new Error("Invalid origin");
       }
 
-      const data = await openRouter({ content: input });
+      const data = await openRouter({ content: text });
       return data;
     }),
 });

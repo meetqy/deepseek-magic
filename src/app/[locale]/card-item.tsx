@@ -7,12 +7,14 @@ import { Link } from "~/i18n/routing";
 export const CardItem = ({
   title,
   icon,
+  description,
 }: {
   title: ReactNode;
   icon: string;
+  description: string;
 }) => {
   return (
-    <Card isPressable as={Link} href={"/url-slug-generator"}>
+    <Card shadow="sm" isPressable as={Link} href={"/url-slug-generator"}>
       <CardBody>
         <h2 className="flex items-center gap-2 text-xl font-bold">
           <Button isIconOnly color="primary" variant="flat" size="lg">
@@ -21,9 +23,7 @@ export const CardItem = ({
           {title}
         </h2>
       </CardBody>
-      <CardFooter className="text-default-500">
-        Use ai to convert text to url slugify.
-      </CardFooter>
+      <CardFooter className="text-default-500">{description}</CardFooter>
     </Card>
   );
 };
