@@ -6,7 +6,7 @@ export default async function Page({
   params: Promise<{ locale: string }>;
 }) {
   const { locale = "en" } = await params;
-  const { default: Readme } = await import(`./readme/${locale}.mdx`);
+  const { default: Readme } = await import(`./readme/${locale}.md`);
 
   return (
     <div className="to-background-900 min-h-screen bg-gradient-to-b from-background">

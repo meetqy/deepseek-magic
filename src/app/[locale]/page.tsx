@@ -22,6 +22,7 @@ export default async function Page() {
               URL Slug Generator <span className="sr-only">by DeepSeek</span>
             </>
           }
+          href="/url-slug-generator"
           icon="formkit:url"
           description="Use ai to convert text to url slugify."
         />
@@ -32,6 +33,7 @@ export default async function Page() {
               <span className="sr-only">by DeepSeek</span>
             </>
           }
+          href="/text-to-emoji-converter"
           icon="twemoji:grinning-face"
           description="Use ai to convert text to emoji."
         />

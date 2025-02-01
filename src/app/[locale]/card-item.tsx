@@ -8,13 +8,15 @@ export const CardItem = ({
   title,
   icon,
   description,
+  href,
 }: {
   title: ReactNode;
   icon: string;
   description: string;
+  href: string;
 }) => {
   return (
-    <Card shadow="sm" isPressable as={Link} href={"/url-slug-generator"}>
+    <Card shadow="sm" isPressable as={Link} href={href}>
       <CardBody>
         <h2 className="flex items-center gap-2 text-xl font-bold">
           <Button isIconOnly color="primary" variant="flat" size="lg">
