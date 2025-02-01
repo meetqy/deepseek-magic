@@ -3,6 +3,7 @@ import { Card, CardBody, Input, Button } from "@heroui/react";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { getStringLength } from "~/lib/utils";
 import { api } from "~/trpc/react";
 
 export const ToolSection = () => {
@@ -19,7 +20,6 @@ export const ToolSection = () => {
             placeholder="Type something like 'DeepSeek AI Blog Post!'"
             value={input}
             onValueChange={setInput}
-            max={100}
             size="lg"
             className="text-lg"
             endContent={
@@ -28,9 +28,9 @@ export const ToolSection = () => {
                 isLoading={ai.isPending}
                 color="primary"
                 onPress={() => {
-                  if (!input || input.length > 100) {
+                  if (getStringLength(input) > 200) {
                     return toast.error(
-                      "Please input text within 100 characters.",
+                      "Please input text within 200 characters.",
                     );
                   }
 

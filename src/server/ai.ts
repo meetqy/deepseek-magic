@@ -16,7 +16,7 @@ export const openRouter = async ({ content }: { content: string }) => {
       {
         method: "POST",
         headers: {
-          Authorization: env.API_KEY,
+          Authorization: `Bearer ${env.API_KEY}`,
           "HTTP-Referer": "https://deepseekmagic.com", // Optional. Site URL for rankings on openrouter.ai.
           "X-Title": "DeepSeek Magic", // Optional. Site title for rankings on openrouter.ai.
           "Content-Type": "application/json",
@@ -32,6 +32,8 @@ export const openRouter = async ({ content }: { content: string }) => {
         }),
       },
     );
+
+    console.log(response);
 
     if (!response.ok) {
       throw new Error(`Translation failed: ${response.statusText}`);
