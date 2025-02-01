@@ -4,10 +4,8 @@ A collection of AI tools powered by DeepSeek language models, offering a series 
 
 ## All Tools
 
-| Tool                    | Online                                               |
-| ----------------------- | ---------------------------------------------------- |
-| URL Slug Generator      | https://deepseekmagic.com/en/url-slug-generator      |
-| Text to Emoji Converter | https://deepseekmagic.com/en/text-to-emoji-converter |
+- [URL Slug Generator](https://deepseekmagic.com/en/url-slug-generator)
+- [Text to Emoji Converter](https://deepseekmagic.com/en/text-to-emoji-converter)
 
 ## Website
 
