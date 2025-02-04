@@ -34,34 +34,3 @@ export function getStringLength(str: string): number {
     return acc + 1;
   }, 0);
 }
-
-/**
- * Truncate string to specified length, considering character widths
- *
- * @param str The input string to truncate
- * @param maxLength Maximum length allowed
- * @param suffix Optional suffix to append (default: '...')
- * @returns Truncated string
- */
-export function truncateString(
-  str: string,
-  maxLength: number,
-  suffix = "...",
-): string {
-  if (!str) return "";
-
-  const chars = Array.from(str);
-  let currentLength = 0;
-  let result = "";
-
-  for (const char of chars) {
-    const charLength = getStringLength(char);
-    if (currentLength + charLength > maxLength) {
-      return result + suffix;
-    }
-    result += char;
-    currentLength += charLength;
-  }
-
-  return result;
-}

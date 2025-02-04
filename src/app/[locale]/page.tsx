@@ -37,6 +37,17 @@ export default async function Page() {
           icon="twemoji:grinning-face"
           description="Use ai to convert text to emoji."
         />
+        <CardItem
+          title={
+            <>
+              TikTok Hashtag Generator{" "}
+              <span className="sr-only">by DeepSeek</span>
+            </>
+          }
+          description="Use ai to generate hashtags for TikTok."
+          href="/tiktok-hashtag-generator"
+          icon="line-md:hash-small"
+        />
       </div>
     </div>
   );
