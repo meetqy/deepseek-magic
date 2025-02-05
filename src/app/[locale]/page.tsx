@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { CardItem } from "./card-item";
+import { navs } from "~/lib/navs";
 
 export default async function Page() {
   const t = await getTranslations();
@@ -16,49 +17,19 @@ export default async function Page() {
       </div>
 
       <div className="container grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <CardItem
-          title={
-            <>
-              URL Slug Generator <span className="sr-only">by DeepSeek</span>
-            </>
-          }
-          href="/url-slug-generator"
-          icon="formkit:url"
-          description="Use ai to convert text to url slugify."
-        />
-        <CardItem
-          title={
-            <>
-              Text to Emoji Converter{" "}
-              <span className="sr-only">by DeepSeek</span>
-            </>
-          }
-          href="/text-to-emoji-converter"
-          icon="twemoji:grinning-face"
-          description="Use ai to convert text to emoji."
-        />
-        <CardItem
-          title={
-            <>
-              TikTok Hashtag Generator{" "}
-              <span className="sr-only">by DeepSeek</span>
-            </>
-          }
-          description="Use ai to generate hashtags for TikTok."
-          href="/tiktok-hashtag-generator"
-          icon="line-md:hash-small"
-        />
-        <CardItem
-          title={
-            <>
-              7 Letter License Plate Generator{" "}
-              <span className="sr-only">by DeepSeek</span>
-            </>
-          }
-          description="Use ai to generate 7 letter license plates."
-          href="/7-letter-license-plate-generator"
-          icon="material-symbols:license"
-        />
+        {navs.map((item) => (
+          <CardItem
+            key={item.href}
+            title={
+              <>
+                {item.title} <span className="sr-only">by DeepSeek</span>
+              </>
+            }
+            href={item.href}
+            icon={item.icon}
+            description={item.description}
+          />
+        ))}
       </div>
     </div>
   );
