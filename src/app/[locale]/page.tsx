@@ -15,7 +15,7 @@ export default async function Page() {
         </p>
       </div>
 
-      <div className="container grid gap-x-8 gap-y-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="container grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         <CardItem
           title={
             <>
@@ -47,6 +47,17 @@ export default async function Page() {
           description="Use ai to generate hashtags for TikTok."
           href="/tiktok-hashtag-generator"
           icon="line-md:hash-small"
+        />
+        <CardItem
+          title={
+            <>
+              7 Letter License Plate Generator{" "}
+              <span className="sr-only">by DeepSeek</span>
+            </>
+          }
+          description="Use ai to generate 7 letter license plates."
+          href="/7-letter-license-plate-generator"
+          icon="material-symbols:license"
         />
       </div>
     </div>
