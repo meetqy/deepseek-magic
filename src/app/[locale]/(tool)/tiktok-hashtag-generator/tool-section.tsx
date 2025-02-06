@@ -27,7 +27,7 @@ Return the hashtags in JSON array format.  Do not include any introductory or ex
 
   return (
     <div className="container mx-auto px-4 pb-20">
-      <Card className="mx-auto max-w-3xl bg-zinc-900/60 backdrop-blur-md">
+      <Card className="mx-auto max-w-3xl">
         <CardBody className="space-y-6 p-8">
           <div>
             <Textarea
